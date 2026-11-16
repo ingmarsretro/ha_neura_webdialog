@@ -1,0 +1,117 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Neura Webdialog",
+        "description": "Connect to the heat pump web interface. The integration reads the same schema page as the previous PHP script.",
+        "data": {
+          "host": "IP address or hostname",
+          "username": "Username",
+          "password": "Password",
+          "scan_interval": "Update interval"
+        },
+        "data_description": {
+          "host": "IP address or hostname of the heat pump, without a path.",
+          "scan_interval": "The PHP script was started by cron. 60 seconds matches a run every minute."
+        }
+      },
+      "mqtt": {
+        "title": "MQTT",
+        "description": "Measured values are published unchanged to the existing topics. Port 1883 and client id neura_webdialog are preset. Enter the broker address yourself.",
+        "data": {
+          "mqtt_enabled": "Publish MQTT",
+          "mqtt_host": "Broker address",
+          "mqtt_port": "Port",
+          "mqtt_username": "Username",
+          "mqtt_password": "Password",
+          "mqtt_client_id": "Client ID"
+        },
+        "data_description": {
+          "mqtt_username": "Leave empty when the broker has no login. The PHP script did not send credentials.",
+          "mqtt_password": "Only used together with a username."
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure Neura Webdialog",
+        "description": "Leave a password field empty to keep the stored value.",
+        "data": {
+          "host": "IP address or hostname",
+          "username": "Username",
+          "password": "Password",
+          "scan_interval": "Update interval",
+          "mqtt_enabled": "Publish MQTT",
+          "mqtt_host": "Broker address",
+          "mqtt_port": "Port",
+          "mqtt_username": "MQTT username",
+          "mqtt_password": "MQTT password",
+          "mqtt_client_id": "Client ID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "The Neura web interface is unreachable.",
+      "invalid_auth": "Login failed. Check the username and password.",
+      "invalid_host": "This address is invalid.",
+      "invalid_scan_interval": "The interval must be between 10 and 3600 seconds.",
+      "invalid_port": "The port must be between 1 and 65535.",
+      "mqtt_cannot_connect": "The MQTT broker is unreachable or refused the login.",
+      "unknown": "Unexpected error. Details are in the Home Assistant log.",
+      "already_configured": "This heat pump is already configured."
+    },
+    "abort": {
+      "already_configured": "This heat pump is already configured.",
+      "reconfigure_successful": "Neura Webdialog was reconfigured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Neura Webdialog",
+        "description": "Leave a password field empty to keep the stored value.",
+        "data": {
+          "host": "IP address or hostname",
+          "username": "Username",
+          "password": "Password",
+          "scan_interval": "Update interval",
+          "mqtt_enabled": "Publish MQTT",
+          "mqtt_host": "Broker address",
+          "mqtt_port": "Port",
+          "mqtt_username": "MQTT username",
+          "mqtt_password": "MQTT password",
+          "mqtt_client_id": "Client ID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "The Neura web interface is unreachable.",
+      "invalid_auth": "Login failed. Check the username and password.",
+      "invalid_host": "This address is invalid.",
+      "invalid_scan_interval": "The interval must be between 10 and 3600 seconds.",
+      "invalid_port": "The port must be between 1 and 65535.",
+      "mqtt_cannot_connect": "The MQTT broker is unreachable or refused the login.",
+      "unknown": "Unexpected error. Details are in the Home Assistant log.",
+      "already_configured": "This heat pump is already configured."
+    },
+    "abort": {
+      "already_configured": "This heat pump is already configured."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "screed": { "name": "Screed temperature" },
+      "room": { "name": "Room temperature" },
+      "cylinder": { "name": "Cylinder temperature" },
+      "flow": { "name": "Flow temperature" },
+      "return": { "name": "Return temperature" },
+      "comp_in": { "name": "Compressor inlet" },
+      "comp_out": { "name": "Compressor outlet" }
+    },
+    "binary_sensor": {
+      "heater_rod": { "name": "Boiler heating element" },
+      "cylinder_pump": { "name": "Cylinder charge valve" },
+      "heatpump_2": { "name": "Heat pump" },
+      "circulator_pump": { "name": "Circulator pump" },
+      "login": { "name": "Login" }
+    }
+  }
+}

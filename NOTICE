@@ -1,0 +1,63 @@
+Third-party software used by Neura Webdialog
+=============================================
+
+This repository does not vendor the packages below. Home Assistant installs
+paho-mqtt when the integration is set up. aiohttp is already part of Home
+Assistant. The former PHP program and its libraries are not included here.
+
+paho-mqtt
+  Project: Eclipse Paho MQTT Python client
+  https://github.com/eclipse/paho.mqtt.python
+  Authors: Eclipse Foundation and contributors
+  License: Eclipse Public License 2.0 OR BSD 3-Clause
+  Installed through the integration manifest. Not copied into this repository.
+
+aiohttp
+  Project: aiohttp
+  https://github.com/aio-libs/aiohttp
+  Authors: aio-libs contributors
+  License: Apache License 2.0
+  Provided by Home Assistant. Not copied into this repository.
+
+Home Assistant
+  https://github.com/home-assistant/core
+  Authors: Open Home Foundation and contributors
+  License: Apache License 2.0
+  Hosts this integration. Not copied into this repository.
+
+Former PHP program
+==================
+
+An earlier local PHP script read the same heat-pump page. That script and its
+installed libraries are not part of this repository. Their license and author
+information is recorded here so the attribution stays with the new integration.
+
+php-mqtt/client 1.8.0
+  https://github.com/php-mqtt/client
+  Author: Marvin Mall
+  License: MIT
+
+phpgt/dom 3.0.3
+  https://github.com/PhpGt/Dom
+  Authors: Greg Bowler, Alvaro Guimaraes, James Fellows, and contributors
+  License: MIT
+
+phpgt/cssxpath 1.1.4
+  https://github.com/PhpGt/CssXPath
+  Author: Greg Bowler
+  License: MIT
+
+phpgt/propfunc 1.0.1
+  https://github.com/PhpGt/PropFunc
+  Author: Greg Bowler
+  License: MIT
+
+guzzlehttp/guzzle 7.5.0
+  https://github.com/guzzle/guzzle
+  Authors: Michael Dowling, Graham Campbell, Jeremy Lindblom, George Mponos,
+  Tobias Nyholm, Márk Sági-Kazár, Tobias Schultze, and contributors
+  License: MIT
+
+Transitive dependencies of those PHP libraries (PSR interfaces, Symfony
+deprecation contracts, and similar) keep the license and authors published
+with each of those projects. They are not shipped in this repository.

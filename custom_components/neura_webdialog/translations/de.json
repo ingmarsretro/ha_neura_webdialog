@@ -1,0 +1,117 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Neura Webdialog",
+        "description": "Verbindung zur Weboberfläche der Wärmepumpe. Es wird dieselbe Schema-Seite gelesen wie vom bisherigen PHP-Skript.",
+        "data": {
+          "host": "IP-Adresse oder Hostname",
+          "username": "Benutzername",
+          "password": "Passwort",
+          "scan_interval": "Abfrageintervall"
+        },
+        "data_description": {
+          "host": "IP-Adresse oder Hostname der Wärmepumpe, ohne Pfad.",
+          "scan_interval": "Das PHP-Skript lief per Cron. 60 Sekunden entsprechen einem Lauf pro Minute."
+        }
+      },
+      "mqtt": {
+        "title": "MQTT",
+        "description": "Die Messwerte werden unverändert auf die bisherigen Topics veröffentlicht. Port 1883 und die Client-ID neura_webdialog sind vorausgefüllt. Die Broker-Adresse trägst du selbst ein.",
+        "data": {
+          "mqtt_enabled": "MQTT veröffentlichen",
+          "mqtt_host": "Broker-Adresse",
+          "mqtt_port": "Port",
+          "mqtt_username": "Benutzername",
+          "mqtt_password": "Passwort",
+          "mqtt_client_id": "Client-ID"
+        },
+        "data_description": {
+          "mqtt_username": "Leer lassen, wenn der Broker kein Login verlangt. Das PHP-Skript hat keine Zugangsdaten gesendet.",
+          "mqtt_password": "Wird nur zusammen mit einem Benutzernamen verwendet."
+        }
+      },
+      "reconfigure": {
+        "title": "Neura Webdialog neu konfigurieren",
+        "description": "Passwortfelder leer lassen, um den gespeicherten Wert zu behalten.",
+        "data": {
+          "host": "IP-Adresse oder Hostname",
+          "username": "Benutzername",
+          "password": "Passwort",
+          "scan_interval": "Abfrageintervall",
+          "mqtt_enabled": "MQTT veröffentlichen",
+          "mqtt_host": "Broker-Adresse",
+          "mqtt_port": "Port",
+          "mqtt_username": "MQTT-Benutzername",
+          "mqtt_password": "MQTT-Passwort",
+          "mqtt_client_id": "Client-ID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Die Neura-Weboberfläche ist nicht erreichbar.",
+      "invalid_auth": "Anmeldung fehlgeschlagen. Benutzername oder Passwort prüfen.",
+      "invalid_host": "Diese Adresse ist ungültig.",
+      "invalid_scan_interval": "Das Intervall muss zwischen 10 und 3600 Sekunden liegen.",
+      "invalid_port": "Der Port muss zwischen 1 und 65535 liegen.",
+      "mqtt_cannot_connect": "Der MQTT-Broker ist nicht erreichbar oder lehnt die Anmeldung ab.",
+      "unknown": "Unerwarteter Fehler. Details stehen im Home-Assistant-Protokoll.",
+      "already_configured": "Diese Wärmepumpe ist bereits eingerichtet."
+    },
+    "abort": {
+      "already_configured": "Diese Wärmepumpe ist bereits eingerichtet.",
+      "reconfigure_successful": "Neura Webdialog wurde neu konfiguriert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Neura Webdialog",
+        "description": "Passwortfelder leer lassen, um den gespeicherten Wert zu behalten.",
+        "data": {
+          "host": "IP-Adresse oder Hostname",
+          "username": "Benutzername",
+          "password": "Passwort",
+          "scan_interval": "Abfrageintervall",
+          "mqtt_enabled": "MQTT veröffentlichen",
+          "mqtt_host": "Broker-Adresse",
+          "mqtt_port": "Port",
+          "mqtt_username": "MQTT-Benutzername",
+          "mqtt_password": "MQTT-Passwort",
+          "mqtt_client_id": "Client-ID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Die Neura-Weboberfläche ist nicht erreichbar.",
+      "invalid_auth": "Anmeldung fehlgeschlagen. Benutzername oder Passwort prüfen.",
+      "invalid_host": "Diese Adresse ist ungültig.",
+      "invalid_scan_interval": "Das Intervall muss zwischen 10 und 3600 Sekunden liegen.",
+      "invalid_port": "Der Port muss zwischen 1 und 65535 liegen.",
+      "mqtt_cannot_connect": "Der MQTT-Broker ist nicht erreichbar oder lehnt die Anmeldung ab.",
+      "unknown": "Unerwarteter Fehler. Details stehen im Home-Assistant-Protokoll.",
+      "already_configured": "Diese Wärmepumpe ist bereits eingerichtet."
+    },
+    "abort": {
+      "already_configured": "Diese Wärmepumpe ist bereits eingerichtet."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "screed": { "name": "Estrichtemperatur" },
+      "room": { "name": "Raumtemperatur" },
+      "cylinder": { "name": "Boilertemperatur" },
+      "flow": { "name": "Vorlauf" },
+      "return": { "name": "Rücklauf" },
+      "comp_in": { "name": "Kompressor ein" },
+      "comp_out": { "name": "Kompressor aus" }
+    },
+    "binary_sensor": {
+      "heater_rod": { "name": "Boiler E-Patrone" },
+      "cylinder_pump": { "name": "Umschaltventil Boilerladung" },
+      "heatpump_2": { "name": "Wärmepumpe" },
+      "circulator_pump": { "name": "Umwälzpumpe" },
+      "login": { "name": "Anmeldung" }
+    }
+  }
+}

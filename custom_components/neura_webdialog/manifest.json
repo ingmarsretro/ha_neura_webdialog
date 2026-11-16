@@ -1,0 +1,10 @@
+{
+  "domain": "neura_webdialog",
+  "name": "Neura Webdialog",
+  "codeowners": [],
+  "config_flow": true,
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "requirements": ["paho-mqtt>=1.6.1"],
+  "version": "1.0.0"
+}

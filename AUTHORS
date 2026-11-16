@@ -1,0 +1,12 @@
+Neura Webdialog
+Copyright (c) 2026 bihlo
+
+Author
+  bihlo
+
+License
+  Proprietary. See LICENSE.
+
+This repository is the Home Assistant integration. It does not contain heat
+pump passwords, usernames, or site IP addresses. Those are entered in the
+Home Assistant setup form and stay in the Home Assistant configuration.
