@@ -7,30 +7,11 @@ Home-Assistant-Integration für die Weboberfläche einer Neura-Webdialog-Wärmep
 
 In diesem Repository stehen keine Zugangsdaten, Benutzernamen oder Standort-IP-Adressen. Die trägst du nach dem Installieren in Home Assistant ein. Gespeichert werden sie nur in der Home-Assistant-Konfiguration.
 
-Autor ist bihlo. Die Lizenz ist proprietär, siehe [LICENSE](LICENSE). Lizenzen und Autoren der verwendeten Bibliotheken stehen in [NOTICE](NOTICE), die Kurzform in [AUTHORS](AUTHORS).
-
-## Dateien für GitHub
-
-Lade den Inhalt dieses Ordners als Repository hoch. Der Ordner `datasauger/` gehört nicht dazu. Darin liegt die alte PHP-Fassung mit Zugangsdaten, und `.gitignore` schließt ihn aus.
-
-Diese Dateien und Ordner hochladen:
-
-- `AUTHORS`
-- `LICENSE`
-- `NOTICE`
-- `README.md`
-- `hacs.json`
-- `.gitignore`
-- `custom_components/neura_webdialog/`
-- `tests/`
-
-Neues GitHub-Repository anlegen, diese Dateien auf den Branch `main` legen. Ein Release ist nicht nötig. Wer eine Version in HACS sehen will, setzt ein Tag `v1.0.0`. Das entspricht der Version in `custom_components/neura_webdialog/manifest.json`.
-
-Öffentliches und privates Repository funktionieren beide. Bei einem privaten Repository braucht HACS ein GitHub-Token mit Zugriff auf dieses Repository. Das Token wird in HACS unter Konfiguration eingetragen, nicht in diesem Projekt.
+Autor ist ingmarsretro. Die Lizenz ist proprietär, siehe [LICENSE](LICENSE). Lizenzen und Autoren der verwendeten Bibliotheken stehen in [NOTICE](NOTICE), die Kurzform in [AUTHORS](AUTHORS).
 
 ## In Home Assistant über den GitHub-Link hinzufügen
 
-Home Assistant allein hat kein Feld für einen GitHub-Link. Der Link wird in HACS eingetragen. HACS muss vorher installiert sein. Voraussetzung für die Integration ist Home Assistant 2024.11 oder neuer.
+Der Link wird in HACS eingetragen. HACS muss vorher installiert sein. Voraussetzung für die Integration ist Home Assistant 2024.11 oder neuer.
 
 1. HACS öffnen.
 2. Integrationen öffnen.
